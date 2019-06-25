@@ -15,7 +15,7 @@ node {
    }                                    
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
-       def app = docker.build("boppatea/chat-app${commit_id}", '.').push()
+       def app = docker.build("boppatea/weather-app${commit_id}", '.').push()
      }                                     
    }                                       
 }      
