@@ -10,6 +10,7 @@ node {
        sh 'npm install --only=dev'
        sh 'npm test'
      }
+   }
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
        def app = docker.build("jpark2019/boppatea${commit_id}", '.').push()
